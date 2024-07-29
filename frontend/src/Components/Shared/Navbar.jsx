@@ -4,7 +4,7 @@ import { assets } from '../../assets/frontend_assets/assets'
 const Navbar = () => {
     const [menu, setMenu] = useState("home");
   return (
-    <div className='navbar py-5 flex justify-between items-center'>
+    <div className='navbar py-5 flex justify-between items-center z-10'>
       <img className='w-40' src={assets.logo} alt="" />
       <ul className='nav-menu flex list-none gap-5 text-[#49557e] text-lg'>
         {[
