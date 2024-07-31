@@ -21,7 +21,7 @@ const StoreContextProvider = (props) => {
 
     useEffect(()=>{
         console.log(cartItems);
-    },[cartItems])
+    },[cartItems])   
 
     const contextValue = {
         food_list,
