@@ -7,7 +7,7 @@ const FoodStore = ({category}) => {
   return (
     <div className='food-store mt-7' id='food-store'>
       <h2 className='text-[#262626] font-medium text-[max(30px,24px)]'>Top Dishes Near You</h2>
-      <div className="food-store-list grid grid-cols-4 mt-7 gap-7 gap-y-12">
+      <div className="food-store-list grid lg:grid-cols-4 xs:grid-cols-2 grid-cols-1 mt-7 gap-7 gap-y-12">
         {food_list.map((item, index)=>{
           if(category==="All" || category===item.category){
             return <FoodItem key={index} id={item._id} name={item.name} description={item.description} price={item.price} image={item.image} />

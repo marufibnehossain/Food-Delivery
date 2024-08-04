@@ -45,14 +45,16 @@ a{
 }
 
 @layer components {
-  .app {
+  .home {
     @apply w-4/5 m-auto;
   }
 }
 .active{
   color: #ff6347;
 }
-
+.transition-bg {
+  transition: background-color 0.3s ease;
+}
 
 /* h1 {
   font-size: 3.2em;
