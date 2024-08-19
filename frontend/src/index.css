@@ -45,7 +45,7 @@ a{
 }
 
 @layer components {
-  .home {
+  .home, .cart {
     @apply w-4/5 m-auto;
   }
 }

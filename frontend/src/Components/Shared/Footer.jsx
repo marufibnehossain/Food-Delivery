@@ -34,7 +34,7 @@ const Footer = () => {
         </div>
       </div>
       <hr className='w-full h-0.5 mt-5' />
-      <p className='text-center'>Copyright 2024 © Tomato.com - All Rights Reserved.</p>
+      <p className='text-center'>Copyright 2024 © Tomato.com - Developed by <a href='https://marufibnehossain.netlify.app'>Maruf Ibne Hossain</a>.</p>
     </div>
   )
 }
