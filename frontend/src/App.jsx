@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import Navbar from "./Components/Shared/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Cart from "./Pages/Cart/Cart";
-import Order from "./Pages/Order/Order";
+// import Order from "./Pages/Order/Order";
 import Home from "./Pages/Home/Home";
 import Footer from "./Components/Shared/Footer";
 import LoginPopup from "./Components/LoginPopup/LoginPopup";
+import PlaceOrder from "./Pages/PlaceOrder/PlaceOrder";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -19,7 +20,7 @@ const App = () => {
           {/* <Route path="/" element={<Navbar/>}> */}
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/order" element={<Order />} />
+          <Route path="/order" element={<PlaceOrder />} />
           {/* </Route> */}
         </Routes>
       </div>

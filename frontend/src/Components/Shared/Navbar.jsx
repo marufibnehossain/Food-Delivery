@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { assets } from "../../assets/frontend_assets/assets";
 import { Link } from "react-router-dom";
 import ScrollToId from "../ScrollToId/ScrollToId";
+import { StoreContext } from "../../Context/StoreContext";
 
 const Navbar = ({setShowLogin}) => {
   const [menu, setMenu] = useState("home");
   const [scrolled, setScrolled] = useState(false);
+  const {getTotalCartAmount} = useContext(StoreContext);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +54,7 @@ const Navbar = ({setShowLogin}) => {
             <img className="lg:w-6 w-5" src={assets.search_icon} alt="" />
             <div className="navbar-search-icon relative">
               <Link to={'/cart'}><img className="lg:w-6 w-5" src={assets.basket_icon} alt="" /></Link>
-              <div className="dot absolute min-h-[10px] min-w-[10px] bg-[#ff6347] rounded-full -top-2 -right-2"></div>
+              <div className={getTotalCartAmount()===0?"":"dot absolute min-h-[10px] min-w-[10px] bg-[#ff6347] rounded-full -top-2 -right-2"}></div>
             </div>
             <button onClick={()=>setShowLogin(true)} className="text-base text-[#ff6347] hover:text-white border border-[#ff6347] lg:py-2 py-1.5 lg:px-6 px-4 rounded-full cursor-pointer transition-colors duration-300 ease-linear hover:bg-[#ff6347]">
               Sign-In

@@ -1,8 +1,13 @@
 import React, { useContext } from 'react'
 import {StoreContext} from '../../Context/StoreContext'
+import { BsPlusCircleFill } from "react-icons/bs"
+import { FaCircleMinus } from "react-icons/fa6"
+import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
-  const {cartItems,addToCart,food_list,removeFromCart} = useContext(StoreContext);
+  const {cartItems,addToCart,food_list,removeFromCart,getTotalCartAmount} = useContext(StoreContext);
+  const navigate = useNavigate();
+
   return (
     <div className='cart mt-24'>
       <div className="cart-items">
@@ -24,7 +29,7 @@ const Cart = () => {
                   <img className='w-14' src={item.image} alt="" />
                   <p>{item.name}</p>
                   <p>${item.price}</p>
-                  <p className='flex items-center gap-2'><span className='cursor-pointer bg-green-700 py-0.5 px-2 rounded-full text-white' onClick={()=>addToCart(item._id)}>+</span>  {cartItems[item._id]}  <span className='cursor-pointer bg-red-700 py-0.5 px-2 rounded-full text-white' onClick={()=>removeFromCart(item._id)}>-</span></p>
+                  <p className='flex items-center gap-3'><BsPlusCircleFill className='cursor-pointer text-green-700 text-2xl' onClick={()=>addToCart(item._id)} />{cartItems[item._id]}<FaCircleMinus className='cursor-pointer text-red-700 text-2xl' onClick={()=>removeFromCart(item._id)} /></p>
                   <p>${item.price*cartItems[item._id]}</p>
                   <p className='cursor-pointer' onClick={()=>removeFromCart(item._id)}>X</p>
                 </div>
@@ -40,20 +45,20 @@ const Cart = () => {
           <div>
             <div className="cart-total-details flex justify-between text-[#555]">
               <p>Subtotal</p>
-              <p>{0}</p>
+              <p>${getTotalCartAmount()}</p>
             </div>
             <hr className='my-2.5' />
             <div className='flex justify-between text-[#555]'>
               <p>Delivery Fee</p>
-              <p>{2}</p>
+              <p>${getTotalCartAmount()===0?0:2}</p>
             </div>
             <hr className='my-2.5' />
             <div className='flex justify-between text-[#555]'>
               <p>Total</p>
-              <p>{0}</p>
+              <p>${getTotalCartAmount()===0?0:getTotalCartAmount()+2}</p>
             </div>
           </div>
-          <button className='border-none text-white bg-[#ff6347] w-[max(15vw,200px)] py-[12px] rounded cursor-pointer'>Proceed To Checkout</button>
+          <button onClick={()=>navigate('/order')} className='border-none text-white bg-[#ff6347] w-[max(15vw,200px)] py-[12px] rounded cursor-pointer'>Proceed To Checkout</button>
         </div>
         <div className="cart-promocode flex-[1]">
           <p className='text-[#555]'>Enter Promo Code</p>
