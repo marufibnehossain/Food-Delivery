@@ -8,19 +8,19 @@ const PlaceOrder = () => {
     <form className='place-order flex items-start justify-between gap-12 mt-24'>
       <div className="place-order-left w-full max-w-[max(40%,500px)]">
         <p className="title text-3xl font-semibold mb-12">Delivery Information</p>
-        <div className="multi-fields flex">
-            <input className='mb-4 w-full py-2.5 border-[1px_solid_#c5c5c5] rounded outline-[#ff6347] mr-1.5' type="text" placeholder='First Name' />
-            <input className='mb-4 w-full py-2.5 border-[1px_solid_#c5c5c5] rounded outline-[#ff6347] ml-1.5' type="text" placeholder='Last Name' />
+        <div className="multi-fields flex gap-5">
+            <input className='mb-4 w-full py-2.5 border-[1px_solid_#c5c5c5] rounded outline-[#ff6347]' type="text" placeholder='First Name' />
+            <input className='mb-4 w-full py-2.5 border-[1px_solid_#c5c5c5] rounded outline-[#ff6347]' type="text" placeholder='Last Name' />
         </div>
         <input className='mb-4 w-full p-2.5 border-[1px_solid_#c5c5c5] rounded outline-[#ff6347]' type="email" placeholder='Email address' />
         <input className='mb-4 w-full p-2.5 border-[1px_solid_#c5c5c5] rounded outline-[#ff6347]' type="text" placeholder='Street' />
-        <div className="multi-fields flex">
-            <input className='mb-4 w-full p-2.5 border-[1px_solid_#c5c5c5] rounded outline-[#ff6347] mr-1.5' type="text" placeholder='City' />
-            <input className='mb-4 w-full p-2.5 border-[1px_solid_#c5c5c5] rounded outline-[#ff6347] ml-1.5' type="text" placeholder='State' />
+        <div className="multi-fields flex gap-5">
+            <input className='mb-4 w-full p-2.5 border-[1px_solid_#c5c5c5] rounded outline-[#ff6347]' type="text" placeholder='City' />
+            <input className='mb-4 w-full p-2.5 border-[1px_solid_#c5c5c5] rounded outline-[#ff6347]' type="text" placeholder='State' />
         </div>
-        <div className="multi-fields flex">
-            <input className='mb-4 w-full p-2.5 border-[1px_solid_#c5c5c5] rounded outline-[#ff6347] mr-1.5' type="text" placeholder='Zip code' />
-            <input className='mb-4 w-full p-2.5 border-[1px_solid_#c5c5c5] rounded outline-[#ff6347] ml-1.5' type="text" placeholder='Country' />
+        <div className="multi-fields flex gap-5">
+            <input className='mb-4 w-full p-2.5 border-[1px_solid_#c5c5c5] rounded outline-[#ff6347]' type="text" placeholder='Zip code' />
+            <input className='mb-4 w-full p-2.5 border-[1px_solid_#c5c5c5] rounded outline-[#ff6347]' type="text" placeholder='Country' />
         </div>
         <input className='mb-4 w-full p-2.5 border-[1px_solid_#c5c5c5] rounded outline-[#ff6347]' type="text" placeholder='Phone' />
       </div>
