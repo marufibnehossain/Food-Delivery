@@ -8,9 +8,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    'node_modules/flowbite-react/lib/esm/**/*.js',
     "./src/**/*.{html,js}",
-    "./node_modules/tw-elements/js/**/*.js",
   ],
   theme: {
     extend: {
@@ -58,9 +56,6 @@ export default {
         { values: theme('textShadow') }
       )
     }),
-    require('flowbite/plugin'),
-    require("tw-elements/plugin.cjs"),
-    // require("daisyui")
   ],
   darkMode: "class"
 }
