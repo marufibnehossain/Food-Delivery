@@ -4,7 +4,7 @@ import { TbCloudUpload } from "react-icons/tb";
 import axios from 'axios'
 import { toast } from 'react-toastify';
 
-const Add = () => {
+const Add = ({url}) => {
     
     // const url = "https://localhost:4000";
     // const [image, setImage] = useState(false);
@@ -41,7 +41,6 @@ const Add = () => {
     //     }
     // }
 
-    const url = "http://localhost:4000";
     const [image, setImage] = useState(null);
     const [data, setData] = useState({
         name: "",
