@@ -21,7 +21,7 @@ const LoginPopup = ({setShowLogin}) => {
   const onLogin = async (event) => {
     event.preventDefault()
     let newUrl = url;
-    if (currState === "login") {
+    if (currState === "Login") {
       newUrl+='/api/user/login'
     }
     else{
@@ -48,9 +48,9 @@ const LoginPopup = ({setShowLogin}) => {
           <img className='w-4 cursor-pointer' onClick={()=>setShowLogin(false)} src={assets.cross_icon} alt="" />
         </div>
         <div className="login-popup-inputs flex flex-col gap-4">
-          {currState==="Login"?<></>:<input className='outline-none border-[1px_solid_#c9c9c9] p-[10px] rounded' type="text" placeholder='Your Name' name="name" onChange={onChangeHandler} value={data.name} id="" required />}
-          <input className='outline-none border-[1px_solid_#c9c9c9] p-[10px] rounded' type="email" placeholder='Your Email' name="email" onChange={onChangeHandler} value={data.email} id="" required />
-          <input className='outline-none border-[1px_solid_#c9c9c9] p-[10px] rounded' type="password" placeholder='Password' name="password" onChange={onChangeHandler} value={data.password} id="" required />
+          {currState==="Login"?<></>:<input className='outline-none border-[1px_solid_#c9c9c9] p-[10px] rounded' type="text" placeholder='Your Name' name="name" onChange={onChangeHandler} value={data.name} id="name-input" required />}
+          <input className='outline-none border-[1px_solid_#c9c9c9] p-[10px] rounded' type="email" placeholder='Your Email' name="email" onChange={onChangeHandler} value={data.email} id="email-input" required />
+          <input className='outline-none border-[1px_solid_#c9c9c9] p-[10px] rounded' type="password" placeholder='Password' name="password" onChange={onChangeHandler} value={data.password} id="password-input" required />
         </div>
         <button type='submit' className='border-none p-[10px] rounded text-white bg-[#ff6347] text-[15px] cursor-pointer'>{currState==="Sign Up"?"Create Account":"Login"}</button>
         <div>
