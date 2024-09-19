@@ -3,11 +3,11 @@ import { assets } from '../../assets/frontend_assets/assets'
 import { StoreContext } from '../../Context/StoreContext';
 
 const FoodItem = ({id, name, price, description, image}) => {
-    const {cartItems, addToCart, removeFromCart} = useContext(StoreContext);
+    const {cartItems, addToCart, removeFromCart, url} = useContext(StoreContext);
   return (
     <div className='food-item w-full m-auto rounded-2xl shadow-[0px_0px_10px_#00000015] transition-all duration-300 animate-fadeIn overflow-hidden'>
       <div className='relative'>
-        <img className='w-full' src={image} alt="food-image" />
+        <img className='w-full' src={url+"/images/"+image} alt="food-image" />
         {
             !cartItems[id]
             ?<img className='add absolute w-9 bottom-4 right-4 cursor-pointer rounded-full' onClick={()=>addToCart(id)} src={assets.add_icon_white} alt='' />:<div className='food-item-counter absolute bottom-4 right-4 flex items-center gap-2.5 p-[6px] rounded-full bg-white'>

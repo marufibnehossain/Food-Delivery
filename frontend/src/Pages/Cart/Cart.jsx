@@ -5,7 +5,7 @@ import { FaCircleMinus } from "react-icons/fa6"
 import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
-  const {cartItems,addToCart,food_list,removeFromCart,getTotalCartAmount} = useContext(StoreContext);
+  const {cartItems,addToCart,food_list,removeFromCart,getTotalCartAmount, url} = useContext(StoreContext);
   const navigate = useNavigate();
 
   return (
@@ -26,7 +26,7 @@ const Cart = () => {
             return(
               <div>
                 <div className="cart-items-title grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr] items-center text-[max(1vw,12px)] cart-items-item my-[10px] text-black">
-                  <img className='w-14' src={item.image} alt="" />
+                  <img className='w-14' src={url+ "/images/" + item.image} alt="" />
                   <p>{item.name}</p>
                   <p>${item.price}</p>
                   <p className='flex items-center gap-3'><BsPlusCircleFill className='cursor-pointer text-green-700 text-2xl' onClick={()=>addToCart(item._id)} />{cartItems[item._id]}<FaCircleMinus className='cursor-pointer text-red-700 text-2xl' onClick={()=>removeFromCart(item._id)} /></p>
