@@ -103,11 +103,10 @@ const StoreContextProvider = (props) => {
     useEffect(() => {
         async function loadData() {
             try {
+                await fetchFoodList();
                 const savedToken = localStorage.getItem("token");
-    
                 if (savedToken) {
                     setToken(savedToken); // Update state
-                    await fetchFoodList();
                     await loadCartData();
                 } else {
                     console.log("No token found.");
