@@ -82,11 +82,11 @@ const StoreContextProvider = (props) => {
     // }
 
     const loadCartData = async () => {
-        console.log("Token used for API call:", token);
+        // console.log("Token used for API call:", token);
         if (token) {
             try {
                 const response = await axios.post(url + "/api/cart/get", {}, { headers: { token } });
-                console.log("Cart data response:", response.data);
+                // console.log("Cart data response:", response.data);
                 setCartItems(response.data.cartData);
             } catch (error) {
                 console.error("Error loading cart data:", error.response || error);
@@ -99,28 +99,6 @@ const StoreContextProvider = (props) => {
         }
     }
 
-    // useEffect(()=>{
-    //     console.log(cartItems);
-    // },[cartItems])   
-
-    // useEffect(()=>{
-    //     async function loadData() {
-    //         await fetchFoodList();
-    //         // if (localStorage.getItem("token")) {
-    //         //     setToken(localStorage.getItem("token"));
-    //         // }
-    //         try {
-    //             const savedToken = localStorage.getItem("token");
-    //             if (savedToken){
-    //                 setToken(savedToken);
-    //                 await loadCartData(savedToken);
-    //             }
-    //         } catch (error) {
-    //             console.error("Error accessing localStorage", error);
-    //         }
-    //     }
-    //     loadData();
-    // },[])
 
     useEffect(() => {
         async function loadData() {
@@ -140,13 +118,6 @@ const StoreContextProvider = (props) => {
         }
         loadData();
     }, [token]); // Initial load
-    
-    // useEffect(() => {
-    //     if (token) {
-    //         loadCartData();
-    //     }
-    // }, [token]); // Load cart data when token updates
-    
     
 
     const contextValue = {

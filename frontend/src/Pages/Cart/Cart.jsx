@@ -24,7 +24,7 @@ const Cart = () => {
         {food_list.map((item,index)=>{
           if(cartItems[item._id]>0){
             return(
-              <div>
+              <div key={item._id}>
                 <div className="cart-items-title grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr] items-center text-[max(1vw,12px)] cart-items-item my-[10px] text-black">
                   <img className='w-14' src={url+ "/images/" + item.image} alt="" />
                   <p>{item.name}</p>
@@ -58,7 +58,7 @@ const Cart = () => {
               <p>${getTotalCartAmount()===0?0:getTotalCartAmount()+2}</p>
             </div>
           </div>
-          <button onClick={()=>navigate('/order')} className='border-none text-white bg-[#ff6347] w-[max(15vw,200px)] py-[12px] rounded cursor-pointer'>Proceed To Checkout</button>
+          <button onClick={()=>navigate('/place-order')} className='border-none text-white bg-[#ff6347] w-[max(15vw,200px)] py-[12px] rounded cursor-pointer'>Proceed To Checkout</button>
         </div>
         <div className="cart-promocode flex-[1]">
           <p className='text-[#555]'>Enter Promo Code</p>

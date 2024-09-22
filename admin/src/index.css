@@ -21,3 +21,8 @@ hr{
   height: 1px;
   background-color: #a9a9a9;
 }
+@layer components {
+  .order {
+    @apply w-9/12 m-auto;
+  }
+}

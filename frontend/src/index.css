@@ -45,7 +45,7 @@ a{
 }
 
 @layer components {
-  .home, .cart, .place-order {
+  .home, .cart, .place-order, .my-order {
     @apply w-4/5 m-auto;
   }
 }
