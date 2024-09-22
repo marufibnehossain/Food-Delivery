@@ -1,4 +1,3 @@
-import { CurrencyCodes } from "validator/lib/isISO4217.js";
 import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
 import Stripe from 'stripe';
@@ -7,8 +6,8 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 const placeOrder = async (req,res)=> {
 
-    const frontend_url = process.env.FRONTEND_URL;
-    // const frontend_url = "http://localhost:5173";
+    // const frontend_url = process.env.FRONTEND_URL;
+    const frontend_url = "http://localhost:5173";
 
     try {
         const newOrder = new orderModel({
