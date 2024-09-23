@@ -58,6 +58,7 @@ const StoreContextProvider = (props) => {
             console.error("Error fetching food list", error.response || error);
         }
     }
+    
 
     // const loadCartData = async () => {
     //     // try {

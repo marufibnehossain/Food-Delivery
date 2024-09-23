@@ -30,8 +30,8 @@ const List = ({url}) => {
   },[])
 
   return (
-    <div className='list w-9/12 ms-[max(5vw,25px)] mt-12 text-[#6d6d6d] flex-col'>
-      <p>All Food List</p>
+    <div className='list w-9/12 ms-[max(5vw,25px)] my-12 text-[#6d6d6d] flex-col'>
+      <p className='text-3xl font-semibold mb-8'>All Food List</p>
       <div className="list-table">
         <div className="list-table-format xs:grid hidden xs:grid-cols-[0.5fr_2fr_1fr_1fr_0.5fr] grid-cols-[1fr_3fr_1fr] items-center xs:gap-2.5 gap-4 py-3 px-[15px] border border-[#cacaca] text-[13px] bg-[#f9f9f9]">
           <p className='font-bold'>Image</p>
