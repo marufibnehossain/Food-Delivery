@@ -11,7 +11,10 @@ import orderRouter from "./routes/orderRoute.js";
 
 const allowedOrigins = [
     'http://localhost:5173',  // Frontend
-    'http://localhost:5174',  // Frontend
+    'http://localhost:5174',
+    'https://food-tomato.netlify.app/',  // Frontend
+    'https://food-delivery-101w.onrender.com',
+    'https://food-delivery-admin-tl7p.onrender.com',
     // 'https://your-admin-panel.netlify.app'      // Admin Panel
 ];
 
