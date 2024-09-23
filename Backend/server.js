@@ -9,6 +9,12 @@ import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
 
 
+const allowedOrigins = [
+    'http://localhost:5173',  // Frontend
+    'http://localhost:5174',  // Frontend
+    // 'https://your-admin-panel.netlify.app'      // Admin Panel
+];
+
 // dotenv.config()
 // app config
 const app = express()
@@ -16,7 +22,19 @@ const port = process.env.PORT || 4000
 
 // middleware
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+
+        if (allowedOrigins.indexOf(origin) === -1) {
+            const msg = 'The CORS policy for this site does not allow access from the specified origin.';
+            return callback(new Error(msg), false);
+        }
+        return callback(null, true);
+    },
+    credentials: true // If you're using cookies, set this to true
+}));
 
 //DB Connection
 connectDB();

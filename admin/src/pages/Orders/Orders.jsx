@@ -28,9 +28,16 @@ const Orders = ({url}) => {
     fetchAllOrders();
   },[])
   return (
-    <div className='order add'>
-      <h3 className='text-3xl font-semibold mb-12'>Order Page</h3>
+    <div className='order add h-screen'>
+      <h3 className='text-3xl font-semibold my-12'>Order Page</h3>
       <div>
+        <div className="grid lg:grid-cols-[0.5fr_2fr_1fr_1fr_1fr] grid-cols-[1fr_2fr_1fr] items-center lg:gap-7 gap-y-1 gap-x-3 md:text-sm text-xs py-2.5 px-5 text-[#454545] border-[1px] border-[#CACACA]">
+          <p className='font-bold'>Image</p>
+          <p className='font-bold'>Name</p>
+          <p className='font-bold'>Item Quantity</p>
+          <p className='font-bold'>Price</p>
+          <p className='font-bold'>Status</p>
+        </div>
         {orders.map((order,index)=>(
           <div key={index} className='grid lg:grid-cols-[0.5fr_2fr_1fr_1fr_1fr] grid-cols-[0.5fr_2fr_1fr] items-start md:gap-7 gap-2.5 border-[1px] border-[tomato] md:p-5 py-4 px-2 my-7 md:text-sm text-xs text-[#505050]'>
             <img className='lg:w-auto w-10' src={assets.parcel_icon} alt="" />

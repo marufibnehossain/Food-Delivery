@@ -25,12 +25,19 @@ const MyOrders = () => {
 
 
   return (
-    <div className='my-order my-12'>
+    <div className='my-order my-12 min-h-[34.6vh]'>
       <h2 className='text-3xl font-semibold mb-12'>My Orders</h2>
       <div className='flex flex-col gap-5 mt-7'>
+        <div className="grid lg:grid-cols-[0.5fr_2fr_1fr_1fr_1fr] grid-cols-[1fr_2fr_1fr] items-center lg:gap-7 gap-y-1 gap-x-3 md:text-sm text-xs py-2.5 px-5 text-[#454545] border-[1px] border-[#CACACA]">
+            <p className='font-bold'>Image</p>
+            <p className='font-bold'>Name</p>
+            <p className='font-bold'>Price</p>
+            <p className='font-bold'>Item Quantity</p>
+            <p className='font-bold'>Status</p>
+        </div>
         {data.map((order,index)=>{
             return(
-                <div key={index} className='grid lg:grid-cols-[0.5fr_2fr_1fr_1fr_2fr_1fr] grid-cols-[1fr_2fr_1fr] items-center lg:gap-7 gap-y-1 gap-x-3 md:text-sm text-xs py-2.5 px-5 text-[#454545] border-[1px] border-[tomato]'>
+                <div key={index} className='grid lg:grid-cols-[0.5fr_2fr_1fr_1fr_1fr] grid-cols-[1fr_2fr_1fr] items-center lg:gap-7 gap-y-1 gap-x-3 md:text-sm text-xs py-2.5 px-5 text-[#454545] border-[1px] border-[tomato]'>
                     <img className='w-[50px]' src={assets.parcel_icon} alt="" />
                     <p>{order.items.map((item, index)=>{
                         if (index === order.items.length-1) {
@@ -43,7 +50,7 @@ const MyOrders = () => {
                     <p>${order.amount}.00</p>
                     <p>items: {order.items.length}</p>
                     <p><span className='text-[tomato]'>&#x25cf; </span><b className='font-medium text-[#4545454]'>{order.status}</b></p>
-                    <button onClick={fetchOrders} className='border-none md:py-3 py-2 rounded bg-[#ffe1e1] cursor-pointer text-[#454545] md:text-sm text-[10px]'>Track Order</button>
+                    {/* <button onClick={fetchOrders} className='border-none md:py-3 py-2 rounded bg-[#ffe1e1] cursor-pointer text-[#454545] md:text-sm text-[10px]'>Track Order</button> */}
                 </div>
             )
         })}

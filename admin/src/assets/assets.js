@@ -4,6 +4,8 @@ import order_icon from './order_icon.png'
 import profile_image from './profile_image.png'
 import upload_area from './upload_area.png'
 import parcel_icon from './parcel_icon.png'
+import header_img from './header_img.png'
+
 
 export const assets ={
     logo,
@@ -11,7 +13,8 @@ export const assets ={
     order_icon,
     profile_image,
     upload_area,
-    parcel_icon
+    parcel_icon,
+    header_img,
 }
 
-export const url = 'https://food-delivery-backend-q3fa.onrender.com'
+export const url = import.meta.env.VITE_BACKEND_URL

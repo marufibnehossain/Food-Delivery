@@ -7,10 +7,11 @@ import List from './pages/List/List'
 import Orders from './pages/Orders/Orders'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Update from './pages/Update/Update'
+import Update from './pages/Update/Update';
+import Home from './pages/Home/Home'
 
 const App = () => {
-  const url = "http://localhost:4000";
+  const url = import.meta.env.VITE_BACKEND_URL;
   return (
     <div className=''>
       <ToastContainer />
@@ -19,6 +20,7 @@ const App = () => {
       <div className="app-content flex">
         <Sidebar />
         <Routes>
+          <Route path='/' element={<Home />} />
           <Route path='/add' element={<Add url={url} />} />
           <Route path='/list' element={<List url={url} />} />
           <Route path='/orders' element={<Orders url={url} />} />
